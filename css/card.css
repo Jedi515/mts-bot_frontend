@@ -1,0 +1,50 @@
+.card {
+  display: block;
+  height: 350px;
+  width: 250px;
+  max-width: 250px;
+  background-color: #fffdd0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 10px;
+  float: left;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.Red {
+    background-color: #a84832;
+}
+.Blue {
+    background-color: #3279a8;
+}
+.Green {
+    background-color: #42a832;
+}
+.Purple {
+    background-color: #9e32a8;
+}
+.Colorless {
+    background-color: gray;
+}
+.Curse {
+    background-color: #333;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-description,
+.card-name {
+  text-align: center;
+  font-family: 'Kreon', serif;
+  max-width: 250px;
+  font-size: 18px;
+}
+
+.card-description {
+  padding-top: 175px;
+  white-space: pre-wrap;
+}
