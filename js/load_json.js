@@ -31,17 +31,17 @@ async function appendData(stringData) {
   $('.section').append(retVal);
 }
 
-let jedidata = "";
-if (localStorage.jedi) {
-  jedidata = localStorage.getItem("jedi");
-  appendData(jedidata);
+let mts_data = "";
+if (localStorage.basegame) {
+  mts_data = localStorage.getItem("basegame");
+  appendData(mts_data);
 }
 else{
-  jedidata = getgit("JohnnyDevo", "mts-bot", "/data/jedi.json");
-  Promise.resolve(jedidata).then(data =>
+  mts_data = getgit("JohnnyDevo", "mts-bot", "/data/basegame.json");
+  Promise.resolve(mts_data).then(data =>
   {
     __ = JSON.stringify(data);
-    localStorage.setItem("jedi", __);
+    localStorage.setItem("basegame", __);
     appendData(__);
   });
 }
