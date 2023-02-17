@@ -13,6 +13,16 @@
   position: relative;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  overflow: hidden;
+}
+
+.card::before {
+  overflow: visible;
+}
+.energy {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
 .Red {
     background-color: #a84832;
@@ -95,6 +105,13 @@
   width: 225px;
 }
 
+.card-name {
+  background-color: #fffdd0;
+}
 .card-description {
+  margin: 0 5px 5px 5px;
+  border-radius: 5%;
+  height: 145px;
   white-space: pre-wrap;
+  background-color: #fffdd0;
 }
