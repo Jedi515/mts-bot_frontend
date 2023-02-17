@@ -105,13 +105,22 @@
   width: 225px;
 }
 
-.card-name {
+.rarity-Rare {
   background-color: #fffdd0;
 }
+.rarity-Uncommon {
+  background-color: #ADD8E6;
+}
+.rarity-Basic,
+.rarity-Special,
+.rarity-Common {
+  background-color: #aaa;
+}
+
 .card-description {
   margin: 0 5px 5px 5px;
   border-radius: 5%;
   height: 145px;
   white-space: pre-wrap;
-  background-color: #fffdd0;
+  background-color: #ccabb0;
 }
