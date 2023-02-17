@@ -1,5 +1,5 @@
-$('.menu-nav').on('click', function(e){
+$('.menu-btn').on('click', function(e){
     e.PreventDefault;
-    $(this).toggleClass('menu-nav_active');
-    $('.menu-btn').toggleClass('menu-btn_active');
+    $(this).toggleClass('menu-btn_active');
+    $('.menu-nav').toggleClass('menu-nav_active');
   });
