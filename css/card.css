@@ -36,15 +36,42 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.tags,
+.type-Attack,
+.type-Skill,
+.type-Power,
+.type-Status,
+.type-Curse,
 .card-description,
 .card-name {
+  margin: auto;
   text-align: center;
   font-family: 'Kreon', serif;
   max-width: 250px;
   font-size: 18px;
 }
 
+.type-Attack,
+.type-Skill,
+.type-Power,
+.type-Status,
+.type-Curse {
+  background-color: #555;
+  height: 150px;
+  width: 225px;
+}
+
+.type-Power {
+  border-radius: 50%;
+}
+
+.type-Attack,
+.type-Skill,
+.type-Curse,
+.type-Status {
+  border-radius: 5%;
+}
+
 .card-description {
-  padding-top: 175px;
   white-space: pre-wrap;
 }

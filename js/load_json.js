@@ -22,6 +22,8 @@ async function appendData(stringData) {
   data.forEach(element => {
     retVal += '<div class="card ' + element.color + '">';
     retVal += '<div class="card-name">' + element.name + '</div>';
+    retVal += '<div class=type-' + element.type + '></div>';
+    retVal += '<div class=tags>' + element.type + '</div>';
     retVal += '<div class="card-description">' + element.description + '</div>';
     retVal += '</div>';
   });
