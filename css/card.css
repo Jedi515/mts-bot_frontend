@@ -44,6 +44,8 @@
 .type-Curse,
 .card-description,
 .card-name {
+  padding-top: 2px;
+  padding-bottom: 2px;
   margin: auto;
   text-align: center;
   font-family: 'Kreon', serif;
@@ -51,11 +53,17 @@
   font-size: 18px;
 }
 
+.tags span {
+  background-color: #aaa;
+  border-radius: 10%;
+}
+
 .type-Attack,
 .type-Skill,
 .type-Power,
 .type-Status,
 .type-Curse {
+  content: "";
   background-color: #555;
   height: 150px;
   width: 225px;
@@ -70,6 +78,21 @@
 .type-Curse,
 .type-Status {
   border-radius: 5%;
+}
+.type-Attack {
+  height: 125px;
+  margin-bottom: 25px;
+}
+
+.type-Attack::after {
+  position: absolute;
+  top: 146px;
+  left: 13px;
+  border-top: 25px solid #555;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  width: 225px;
 }
 
 .card-description {
