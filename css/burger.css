@@ -43,13 +43,16 @@ transform-origin: left bottom;
 }
 
 .menu-block {
-position:absolute;
 display: flex;
 justify-content: right;
 align-items: center;
 overflow: hidden;
 border-top-right-radius: 50px;
 border-bottom-right-radius: 50px;
+position: fixed;
+top: 0;
+right: 0;
+z-index: 1;
 }
 
 .menu-nav-link {
