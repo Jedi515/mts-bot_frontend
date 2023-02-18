@@ -43,6 +43,7 @@ transform-origin: left bottom;
 }
 
 .menu-block {
+position:absolute;
 display: flex;
 justify-content: right;
 align-items: center;
