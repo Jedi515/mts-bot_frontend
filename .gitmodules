@@ -1,0 +1,3 @@
+[submodule "mts-bot"]
+	path = mts-bot
+	url = https://github.com/JohnnyDevo/mts-bot
