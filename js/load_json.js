@@ -31,6 +31,7 @@ async function appendData(stringData) {
     element = data[i];
     retVal += '<div class="card ' + element.color + '">';
     if (element.cost != "") {retVal += '<div class="energy">' + element.cost + '</div>';}
+    retVal += '<div class=modId>' + '</div>';
     retVal += '<div class="card-name rarity-' + element.rarity + '">' + element.name + '</div>';
     retVal += '<div class=type-' + element.type + '></div>';
     retVal += '<div class=tags><span>' + element.type + '</span></div>';
@@ -40,39 +41,63 @@ async function appendData(stringData) {
     retVal = '';
   }
   offset += loadAtOnce;
-  /*
-  data.forEach(element => {
-    retVal += '<div class="card ' + element.color + '">';
-    if (element.cost != "") {retVal += '<div class="energy">' + element.cost + '</div>';}
-    retVal += '<div class="card-name rarity-' + element.rarity + '">' + element.name + '</div>';
-    retVal += '<div class=type-' + element.type + '></div>';
-    retVal += '<div class=tags><span>' + element.type + '</span></div>';
-    retVal += '<div class="card-description">' + element.description + '</div>';
-    retVal += '</div>';
-  });*/
 }
 
-let mts_data = "";
+function addDataToStorage(newData) {
+  __ = {};
+  if (typeof newData == typeof "String") {
+    __ = JSON.parse(newData);
+  }
+  else __ = newData;
+  if (localStorage.cardsData != "{}") {
+    oldData = localStorage.getItem("cardsData");
+  }
+  else oldData = JSON.parse("{}");
+  oldData.append(__);
+  localStorage.setItem("cardsData", oldData);
+}
+
+let cardsData = "";
+
 $(document).ready(function(e) {
-  if (localStorage.basegame) {
-    mts_data = localStorage.getItem("basegame");
-    appendData(mts_data);
+
+  if (localStorage.basegame != "{}") {
+    cardsData = localStorage.getItem("basegame");
+    appendData(cardsData);
   }
   else{
-    mts_data = getgit("JohnnyDevo", "mts-bot", "/data/basegame.json");
-    Promise.resolve(mts_data).then(data =>
+    folder_data = fetch("https://api.github.com/repos/JohnnyDevo/mts-bot/contents/data")
+    .then(data => data.json())
+    .then(jsonData => {
+      jsonData.forEach(element =>
+        {
+          __ = JSON.parse(fetch("./mts-bot/data/" + element.name));
+          console.log(__.cards.length);
+        })
+    });
+
+    __ = fetch("./mts-bot/data/basegame.json")
+    .then(response => response.text())
+    .then(data => {
+      appendData(data);
+  });
+
+  /*
+    cardsData = fetch("./mts-bot/data/basegame.json")
+    .then(response => response.json())
+    .then(data => 
     {
       __ = JSON.stringify(data);
       localStorage.setItem("basegame", __);
       appendData(__);
-      mts_data = __;
-    });
+      cardsData = __;
+    });*/
   }
 
   $(document).scroll(function(e){
     if ($(window).scrollTop() >= $(document).height() - $(window).height() - 700){
-      if (mts_data != "") {
-        appendData(mts_data);
+      if (cardsData != "") {
+        appendData(cardsData);
       }
     }
   });
