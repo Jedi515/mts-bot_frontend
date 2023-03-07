@@ -60,20 +60,26 @@ function addDataToStorage(newData) {
 let cardsData = "";
 
 $(document).ready(function(e) {
-
+/*
   if (localStorage.basegame != "{}") {
     cardsData = localStorage.getItem("basegame");
     appendData(cardsData);
   }
-  else{
+  else*/
+  {
     folder_data = fetch("https://api.github.com/repos/JohnnyDevo/mts-bot/contents/data")
     .then(data => data.json())
     .then(jsonData => {
+      console.log(jsonData);/*
       jsonData.forEach(element =>
         {
-          __ = JSON.parse(fetch("./mts-bot/data/" + element.name));
-          console.log(__.cards.length);
-        })
+          //__ = JSON.parse(fetch("./mts-bot/data/" + element.name));
+          __ = fetch("./mts-bot/data/" + element.name)
+          Promise.resolve(__)
+          .then(data => data.json())
+          .then(json_data => console.log(json_data.cards.length));
+        });*/
+        localStorage.setItem('mods', jsonData);
     });
 
     __ = fetch("./mts-bot/data/basegame.json")

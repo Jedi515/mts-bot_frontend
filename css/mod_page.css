@@ -1,0 +1,17 @@
+.mod_block {
+    content: '';
+    display: block;
+    position: relative;
+    height: 95vh;
+    max-width: 10%;
+    background-color: aqua;
+}
+
+.mod_button {
+    content: '';
+    margin: 10px;
+    float: left;
+    position: relative;
+    display: block;
+    background-color: yellow;
+}
